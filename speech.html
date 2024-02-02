@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zestro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background-color: rgb(240, 240, 240);
+  scroll-behavior: smooth 2.0s;
+}
+::selection{
+  color: #000;
+  background: #fff;
+}
+nav{
+  position: fixed;
+  background: #1b1b1b;
+  width: 100%;
+  height: 80px;
+  /* padding: 10px 0;
+   */
+   padding-top: 11px;
+  z-index: 12;
+}
+nav .menu{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.menu .logo a{
+  text-decoration: none;
+  color: rgb(255, 80, 80);
+  font-size: 40px;
+  font-weight: 600;
+}
+.menu ul{
+  display: inline-flex;
+}
+.menu ul li{
+  list-style: none;
+  margin-left: 7px;
+}
+.menu ul li:first-child{
+  margin-left: 0px;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.menu ul li a:hover{
+  font-size: 27px;
+  background: #fff;
+  color: black;
+}
+.img{
+  background: url(bg-1.jpg)no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.center .title{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.center .btns button:first-child{
+  color: #fff;
+  background: none;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.btns button:first-child:hover{
+  background: white;
+  color: black;
+}
+.center .btns button a:last-child{
+  color: rgb(255, 73, 73);
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.center .btns button:last-child{
+  background: #1b1b1b;
+  color: rgb(255, 73, 73);
+}
+.btns button:last-child:hover{
+  background: transparent;
+  color: white;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.about{
+  scroll-behavior: smooth 3.0s;
+  width: 100% auto;
+  height: 175vh;
+  background-color: rgb(31, 42, 62);
+}
+.about .heading{
+  text-align: center;
+  font-size: 55px;
+  font-weight: 600;
+  padding: 40px;
+  color: rgb(253, 80, 80);
+}
+.about .content{
+  text-align: justify;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  width: 50%;
+}
+.about .content::selection{
+  color: white;
+  background: gray;
+}
+.container-A{
+  display: flex;
+}
+.A-1{
+  width: 32%;
+  height: 300px;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 20px;
+  background-color: rgb(155, 155, 155);
+  border-radius: 20px;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.A-1:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #000000;
+}
+.A-2{
+  width: 32%;
+  height: 300px;
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgb(155, 155, 155);
+  border-radius: 20px;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.A-2:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #000000;
+}
+.A-3{
+  width: 32%;
+  height: 300px;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 40px;
+  background-color: rgb(155, 155, 155);
+  border-radius: 20px;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.A-3:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #000000;
+}
+.one{
+  color: rgb(75, 75, 75);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+::selection{
+  background-color: transparent;
+  color: rgb(255, 73, 73);
+}
+.p-1{
+  font-size: 24px;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  text-align:center;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+.main{
+  display: flex;
+}
+/* swiper */
+.swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-slide{
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgb(31, 42, 62);
+  color: rgb(255, 255, 255);
+  font-size: 21px;
+  font-weight: 500;
+}
+.reviews{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 60px;
+  color: rgb(255, 73, 73);
+  font-weight: 600;
+}
+
+/* footer */
+footer{
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b1b;
+}
+footer p{
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+}
+/* loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  transition: opacity 5s, visibility 30s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #009578;
+  border-radius: 50%;
+  animation: loading 4s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(2turn);
+  }
+}
+.seller{
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+}
+.container-B{
+  display: flex;
+}
+.B-1{
+  width: 28%;
+  height: 420px;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 20px;
+  background-color: rgb(155, 155, 155);
+  border-radius: 20px;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.B-1:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #000000;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+          <div class="logo">
+            <a href="#">Zestro-Gaming</a>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="Conatct us.html">Processors</a></li>
+            <li><a href="Feedback.html">Monitor</a></li> 
+            <li><a href="Feedback.html">CPU</a></li> 
+          </ul>
+        </div>
+      </nav>
+      <div class="img"></div>
+      <div class="center">
+        <div class="title">Conquer Virtual Realms.</div>
+        <div class="sub_title">Zestro Gaming</div>
+        <div class="btns">
+          <button>Gaming</button>
+          <button><a href="About.html">Cases</a></button>
+        </div>
+      </div>
+      <div class="loader"></div>
+      <!-- next section -->
+      <section class="about" id="about">
+          <div class="heading">WE WORK WITH ONLY THE BEST BRANDS</div>
+          <center><div class="content">Shop from the computer store in Pakistan. Zestro brings gaming components and accessories for enthusiast gamers. On our online store, you can buy Graphic cards, prebuilt gaming pc, motherboards, RAMs, processors, monitors, and other gaming accessories. Get your hands on the branded products exclusively available on Zestro.</div></center>
+          <div class="container-A">
+            <div class="A-1">
+              <h1 class="one">Free Shipping</h1>
+              <p class="p-1">Free shipping to all areas of Rawalpindi and Islamabad. Currently, we are not providing free shipping in the rest of Pakistan.</p>
+            </div>
+            <div class="A-2">
+              <h1 class="one">24/7 Support</h1>
+              <p class="p-1">We provide 24/7 customer support. Our team is available 24/7 to answer your queries and solve problems you are facing.</p>
+            </div>
+            <div class="A-3">
+              <h1 class="one">Secure Payment</h1>
+              <p class="p-1">With the secure payment method, you can safely perform transactions and don’t sell or share customer credentials with anyone.</p>
+            </div>
+          </div>
+      </section>
+      <!-- hr lines -->
+      <hr style="width: 100%;height: 15px;background-color: grey;">
+      <hr style="width: 100%;height: 15px;background-color: grey;margin-top: 10px;">
+      <!-- reviews and feedback -->
+      <section class="reviews">
+        <div class="review"></div>
+      </section>
+
+<!-- Reviews -->
+<!-- heading -->
+<h1 class="reviews">Customer Reviews</h1>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div data-hash="slide1" class="swiper-slide">"Thrilled with my recent uniform purchase from Maverick Dresses! The website's easy navigation and detailed product information made the selection process a breeze. I appreciated the quick delivery, and upon receiving the uniforms, the top-notch quality surpassed my expectations. The meticulous craftsmanship and attention to detail were evident. Not only did the uniforms meet my style preferences, but their durability ensures long-lasting wear. Maverick Dresses has truly won me over with both the user-friendly website experience and the exceptional quality of their products. I'm confident in recommending them and will certainly be returning for all my future uniform needs!"</div>
+    <div data-hash="slide2" class="swiper-slide">"Absolutely delighted with my recent uniform purchase from Maverick Dresses! The website's seamless navigation and detailed product information ensured a confident selection process. The swift delivery was a pleasant surprise, and the quality of the uniforms exceeded expectations. From impeccable craftsmanship to attention to detail, each garment showcases durability and style. Maverick-Dresses has not only gained my trust with a user-friendly website but also with their commitment to delivering top-notch quality. I highly recommend them and look forward to returning for all my future uniform needs!"</div>
+    <div data-hash="slide3" class="swiper-slide">"Ecstatic about my recent uniform purchase from Maverick Dresses! Navigating the website was a joy, offering a seamless experience with detailed product insights that guided my choices effortlessly. The swift delivery exceeded expectations, and the uniforms, with their exceptional quality and meticulous craftsmanship, truly impressed. From style to durability, Maverick-Dresses has proven itself as my go-to for uniforms. The user-friendly website and commitment to superior quality have earned my trust. Highly recommend Maverick Dresses to anyone seeking a blend of convenience and top-notch products. Looking forward to future purchases!"</div>
+    <div data-hash="slide4" class="swiper-slide">"Thrilled with my recent uniform purchase from Maverick Dresses! The website's user-friendly design and detailed product information made the selection process a breeze. Swift delivery was a plus, and the uniforms exceeded expectations in both style and quality. The meticulous craftsmanship is evident, ensuring durability and long-lasting wear. Maverick Dresses has won me over with their seamless online experience and commitment to delivering top-notch products. I highly recommend them and will be returning for all my future uniform needs!"</div>
+    <div data-hash="slide5" class="swiper-slide">"Highly satisfied with my recent uniform purchase from Maverick Dresses The website's intuitive design and detailed product information made the selection process easy. Swift delivery and the exceptional quality of the uniforms exceeded my expectations. Meticulous craftsmanship and attention to detail are evident, ensuring both style and durability. Maverick-Dresses has earned my trust with their seamless online experience and commitment to delivering top-notch products. I wholeheartedly recommend them and look forward to returning for future uniform needs!"</div>
+    <div data-hash="slide6" class="swiper-slide">"Extremely pleased with my recent uniform purchase from Maverick-Dresses! The website's intuitive design and detailed product information made the selection process effortless. Quick delivery was a pleasant surprise, and the uniforms not only met but exceeded my expectations in terms of style and quality. The meticulous craftsmanship and attention to detail are evident, ensuring durability. Macvick-Dresses has earned my trust with their user-friendly website and commitment to delivering exceptional products. I highly recommend them and look forward to future purchases!"</div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+      
+<!-- cpu section -->
+<h1 class="sellers">Best Selling Products</h1>
+<div class="container-B">
+<div class="B-1">
+  <img src="cpu-1" alt="" class="B-img-1">
+  <h1 class="B-head-1"></h1>
+  <!--description--> <p class="B-para">lorem <br> ipsum <br> dolor <br> sit <br> amet <br> consectetur</p><br><button>
+  <a href="#">Add To Cart</a></button>
+</div>
+<div class="B-2">
+  <img src="cpu-1" alt="" class="B-img-1">
+  <h1 class="B-head-1"></h1>
+  <!--description--> <p class="B-para">lorem <br> ipsum <br> dolor <br> sit <br> amet <br> consectetur</p><button>
+  <a href="#">Add To Cart</a></button>
+</div>
+<div class="B-3">
+  <img src="cpu-1" alt="" class="B-img-1">
+  <h1 class="B-head-1"></h1>
+  <!--description--> <p class="B-para">lorem <br> ipsum <br> dolor <br> sit <br> amet <br> consectetur</p><button>
+  <a href="#">Add To Cart</a></button>
+</div>
+<div class="B-4">
+  <img src="cpu-1" alt="" class="B-img-1">
+  <h1 class="B-head-1"></h1>
+  <!--description--> <p class="B-para">lorem <br> ipsum <br> dolor <br> sit <br> amet <br> consectetur</p><button>
+  <a href="#">Add To Cart</a></button>
+</div>
+</div>
+<footer>
+  <p>Copyright © 2024 Zestro-Gaming Made By Shayan Siddiqui</p>
+</footer>
+
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <!-- Initialize Swiper -->
+   <script>
+     var swiper = new Swiper(".mySwiper", {
+       spaceBetween: 30,
+       hashNavigation: {
+         watchState: true,
+       },
+       pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+       },
+       navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+       },
+     });
+
+     window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
+
+   </script>
+</body>
+</html>
