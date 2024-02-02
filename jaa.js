@@ -1,0 +1,3 @@
+const shayan= 50;
+const nayyar = 3000;
+const zohaib = 5555555555555555555555555555555555555555;
